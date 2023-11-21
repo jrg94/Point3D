@@ -1,4 +1,4 @@
-package components.geometry;
+package components.geometry.point;
 
 public interface Point3D extends Point3DKernel {
 
