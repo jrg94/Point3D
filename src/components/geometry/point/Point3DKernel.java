@@ -41,7 +41,7 @@ public interface Point3DKernel extends Standard<Point3D> {
      * @ensures TODO 
      * @replaces this
      */
-    double setX(double x);
+    void setX(double x);
 
     /**
      * Sets the y-coordinate of this point.
@@ -50,7 +50,7 @@ public interface Point3DKernel extends Standard<Point3D> {
      * @ensures TODO
      * @replaces this
      */
-    double setY(double y);
+    void setY(double y);
 
     /**
      * Sets the z-coordinate of this point.
@@ -59,6 +59,6 @@ public interface Point3DKernel extends Standard<Point3D> {
      * @ensures TODO
      * @replaces this
      */
-    double setZ(double z);
+    void setZ(double z);
 
 }
