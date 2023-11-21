@@ -53,4 +53,30 @@ public abstract class Point3DSecondary implements Point3D {
         return this.getX() == 0 && this.getY() == 0 && this.getZ() == 0;
     }
 
+    @Override
+    public String toString() {
+        return String.format("(%s, %s, %s)", this.getX(), this.getY(), this.getZ());
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (!(obj instanceof Point3D)) {
+            return false;
+        }
+
+        Point3D p = (Point3D) obj;
+        return this.getX() == p.getX() && this.getY() == p.getY() && this.getZ() == p.getZ();
+    }
+
+    @Override
+    public int hashCode() {
+        return (int) (this.getX() + this.getY() + this.getZ());
+    }
+
 }
