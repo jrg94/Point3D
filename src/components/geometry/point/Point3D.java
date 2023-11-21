@@ -17,7 +17,9 @@ public interface Point3D extends Point3DKernel {
     /**
      * Moves this by treating p as a vector.
      * 
-     * @param p
+     * @param p the vector to translate by
+     * @ensures this = (#x + p.getX(), #y + p.getY(), #z + p.getZ())
+     * @updates this
      */
     void translate(Point3D p);
 
@@ -25,9 +27,11 @@ public interface Point3D extends Point3DKernel {
      * Moves this by overwriting each coordinate with 
      * x, y, and z, respectively.
      * 
-     * @param x
-     * @param y
-     * @param z
+     * @param x the new x-coordinate
+     * @param y the new y-coordinate
+     * @param z the new z-coordinate
+     * @ensures this = (x, y, z)
+     * @replaces this
      */
     void move(double x, double y, double z);
 
