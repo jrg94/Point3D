@@ -27,4 +27,24 @@ command line. Regardless, there is no mac support.
 As a result, I would just recommend installing the
 latest JDK [directly from Oracle's site][jdk-downloads].
 
+### Step 3: Add Key Libraries to Project
+
+As you are probably all aware at this point, you
+need the components jar to get anything running.
+My advice is to [download it from here][components-jar]. 
+Then, drop it into the `lib` folder in the project.
+Git automatically ignores anything you put here by
+default, so don't worry about committing it to
+version control. 
+
+Similarly, you will need the testing APIs (e.g., JUnit).
+Perhaps the easiest way to include them in your project
+is to click the beaker symbol in the left sidebar; it's
+right below the extensions button which looks like four
+squares. From there, you can click "Enable Java Tests"
+and then click "JUnit" from the dropdown. That's it!
+You should now see the two JUnit libraries in the lib
+folder. 
+
+[components-jar]: http://web.cse.ohio-state.edu/software/common/components.jar
 [jdk-downloads]: https://www.oracle.com/java/technologies/downloads/
