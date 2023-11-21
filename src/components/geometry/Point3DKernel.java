@@ -2,13 +2,19 @@ package components.geometry;
 
 import components.standard.Standard;
 
+/**
+ * Point3D kernel component with primary methods. (Note: by
+ * package-wide convention, all references are non-null.)
+ * 
+ * @mathmodel type Point3DKernel is modeled by a mathematical point: (x, y, z)
+ */
 public interface Point3DKernel extends Standard<Point3D> {
 
     /**
      * Retrieves the x-coordinate of this point.
      * 
      * @return the x-coordinate of this
-     * @ensures TODO
+     * @ensures getX = x
      */
     double getX();
 
@@ -16,7 +22,7 @@ public interface Point3DKernel extends Standard<Point3D> {
      * Retrieves the y-coordinate of this point.
      * 
      * @return the y-coordinate of this
-     * @ensures TODO
+     * @ensures getY = y
      */
     double getY();
 
@@ -24,7 +30,7 @@ public interface Point3DKernel extends Standard<Point3D> {
      * Retrieves the z-coordinate of this point.
      * 
      * @return the z-coordinate of this
-     * @ensures TODO
+     * @ensures getZ = z
      */
     double getZ();
 
