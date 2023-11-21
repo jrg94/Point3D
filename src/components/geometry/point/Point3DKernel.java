@@ -1,4 +1,4 @@
-package components.geometry;
+package components.geometry.point;
 
 import components.standard.Standard;
 
