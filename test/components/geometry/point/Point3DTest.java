@@ -40,42 +40,37 @@ public class Point3DTest {
     @Test
     public void testClearDefault() {
         Point3D p = new Point3D1();
+        Point3D pExpected = new Point3D1();
         p.clear();
-        assertEquals(0, p.getX(), .0001);
-        assertEquals(0, p.getY(), .0001);
-        assertEquals(0, p.getZ(), .0001);
+        assertEquals(pExpected, p);
     }
 
     @Test
     public void testClearNonDefault() {
         Point3D p = new Point3D1(5, 7, 9);
+        Point3D pExpected = new Point3D1();
         p.clear();
-        assertEquals(0, p.getX(), .0001);
-        assertEquals(0, p.getY(), .0001);
-        assertEquals(0, p.getZ(), .0001);
+        assertEquals(pExpected, p);
     }
 
     @Test
     public void testNewInstance() {
         Point3D p = new Point3D1();
+        Point3D pExpected = new Point3D1();
         Point3D newP = p.newInstance();
         assertEquals(p, newP);
-        assertEquals(0, p.getX(), .0001);
-        assertEquals(0, p.getY(), .0001);
-        assertEquals(0, p.getZ(), .0001);
+        assertEquals(pExpected, p);
     }
 
     @Test
     public void testTransferFrom() {
         Point3D p = new Point3D1();
+        Point3D pExpected = new Point3D1(2, 4, 6);
         Point3D toTransfer = new Point3D1(2, 4, 6);
+        Point3D toTransferExpected = new Point3D1();
         p.transferFrom(toTransfer);
-        assertEquals(2, p.getX(), .0001);
-        assertEquals(4, p.getY(), .0001);
-        assertEquals(6, p.getZ(), .0001);
-        assertEquals(0, toTransfer.getX(), .0001);
-        assertEquals(0, toTransfer.getY(), .0001);
-        assertEquals(0, toTransfer.getZ(), .0001);
+        assertEquals(pExpected, p);
+        assertEquals(toTransferExpected, toTransfer);
     }
 
     // Kernel tests
@@ -195,6 +190,40 @@ public class Point3DTest {
         Point3D p = new Point3D1();
         p.setZ(15);
         assertEquals(15, p.getZ(), .0001);
+    }
+
+    // Secondary tests
+
+    @Test
+    public void testTranslateByNothing() {
+        Point3D p = new Point3D1();
+        Point3D pExpected = new Point3D1();
+        p.translate(0, 0, 0);
+        assertEquals(pExpected, p);
+    }
+
+    @Test
+    public void testTranslateByOneX() {
+        Point3D p = new Point3D1();
+        Point3D pExpected = new Point3D1(1, 0, 0);
+        p.translate(1, 0, 0);
+        assertEquals(pExpected, p);
+    }
+
+    @Test
+    public void testTranslateByOneY() {
+        Point3D p = new Point3D1();
+        Point3D pExpected = new Point3D1(0, 1, 0);
+        p.translate(0, 1, 0);
+        assertEquals(pExpected, p);
+    }
+
+    @Test
+    public void testTranslateByOneZ() {
+        Point3D p = new Point3D1();
+        Point3D pExpected = new Point3D1(0, 0, 1);
+        p.translate(0, 0, 1);
+        assertEquals(pExpected, p);
     }
 
 }
