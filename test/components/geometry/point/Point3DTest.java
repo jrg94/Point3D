@@ -35,6 +35,49 @@ public class Point3DTest {
         assertEquals(3, p.getZ(), .0001);
     }
 
+    // Standard tests
+
+    @Test
+    public void testClearDefault() {
+        Point3D p = new Point3D1();
+        p.clear();
+        assertEquals(0, p.getX(), .0001);
+        assertEquals(0, p.getY(), .0001);
+        assertEquals(0, p.getZ(), .0001);
+    }
+
+    @Test
+    public void testClearNonDefault() {
+        Point3D p = new Point3D1(5, 7, 9);
+        p.clear();
+        assertEquals(0, p.getX(), .0001);
+        assertEquals(0, p.getY(), .0001);
+        assertEquals(0, p.getZ(), .0001);
+    }
+
+    @Test
+    public void testNewInstance() {
+        Point3D p = new Point3D1();
+        Point3D newP = p.newInstance();
+        assertEquals(p, newP);
+        assertEquals(0, p.getX(), .0001);
+        assertEquals(0, p.getY(), .0001);
+        assertEquals(0, p.getZ(), .0001);
+    }
+
+    @Test
+    public void testTransferFrom() {
+        Point3D p = new Point3D1();
+        Point3D toTransfer = new Point3D1(2, 4, 6);
+        p.transferFrom(toTransfer);
+        assertEquals(2, p.getX(), .0001);
+        assertEquals(4, p.getY(), .0001);
+        assertEquals(6, p.getZ(), .0001);
+        assertEquals(0, toTransfer.getX(), .0001);
+        assertEquals(0, toTransfer.getY(), .0001);
+        assertEquals(0, toTransfer.getZ(), .0001);
+    }
+
     // Kernel tests
 
     @Test 
