@@ -4,20 +4,15 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-public abstract class Point3DTest {
-
-    protected abstract Point3D constructorTest();
-
-    // TODO: include second constructor
-
-    protected abstract Point3D constructorRef();
+public class Point3DTest {
     
     @Test 
     public void testNoArgumentConstructor() {
-        Point3D p = constructorTest();
-        Point3D pExpected = constructorRef();
+        Point3D p = new Point3D1();
 
-        assertEquals(pExpected, p);
+        assertEquals(0, p.getX(), .0001);
+        assertEquals(0, p.getY(), .0001);
+        assertEquals(0, p.getZ(), .0001);
     }
 
 }
